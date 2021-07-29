@@ -3,11 +3,14 @@ const {Schema} = mongoose;
 
 const Vacation = new Schema ({
     vacationType: String,
-    timeType: String,
+    timeType: String, // 4h, 8h
     startDate: Date,
     endDate: Date,
     reason: String,
-    isApproved: Boolean,
+    isApproved: {
+        type: Boolean,
+        default: false,
+    },
     usedDate: Number,
     member: {
         _id: mongoose.Types.ObjectId,

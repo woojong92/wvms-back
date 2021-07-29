@@ -7,6 +7,7 @@ const auth = asyncify(express.Router());
 auth.post("/register", authCtrl.register);
 auth.post("/login", authCtrl.login);
 auth.get("/check", authCtrl.check);
+auth.get("/profile", authCtrl.profile);
 auth.post("/logout", authCtrl.logout);
 
 module.exports = auth;
