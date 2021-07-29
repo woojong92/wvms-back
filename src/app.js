@@ -14,8 +14,8 @@ const port = 3011
 const MONGO_URI = 'mongodb://localhost:27017/test_db';
 
 const mongoose = require('mongoose');
-
-mongoose.connect(MONGO_URI, { 
+const mongo_uri = "mongodb+srv://woody:IvOJdBtIPNtAMiwA@cluster0.vqqlf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+mongoose.connect(mongo_uri, { 
   useNewUrlParser: true, 
   useFindAndModify: false 
 }).then(() => {
