@@ -10,7 +10,7 @@ const api = require('./api');
 const jwtMiddleware = require('./libs/jwtMiddleware');
 
 const app = express()
-const port = 3011
+const port = process.env.PORT
 const MONGO_URI = 'mongodb://localhost:27017/test_db';
 
 const mongoose = require('mongoose');

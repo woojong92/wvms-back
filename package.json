@@ -6,6 +6,10 @@
   "scripts": {
     "start": "node index.js"
   },
+  "engines":{
+    "node": "14.15.0",
+    "yarn": "1.22.4"
+  },
   "author": "woody",
   "license": "ISC",
   "dependencies": {
