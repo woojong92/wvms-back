@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const { JWT_SECRET } = require('../libs/jwtMiddleware');
 
 const VacationCountSchema = new Schema({
     year: Number, // 해당 연도
@@ -48,7 +49,7 @@ MemberSchema.methods.generateToken = async function() {
             email: this.email,
             authority: this.authority
         },
-        process.env.JWT_SECRET,
+       JWT_SECRET,
         {
             expiresIn: '7d', // 7일 동안 유효함
         }
