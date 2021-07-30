@@ -57,12 +57,14 @@ module.exports = {
             }
         })
     
-        // 휴가 신청 시, 휴가 사용 일 수 정
-        Member.findById(res.locals.member._id).then(item => {
-            const index = item.vacationCounts.map(item => item.year).indexOf(2021);
-            item.vacationCounts[index].usedDate += usedDate ;
-            item.save();
-        })
+        if(vacationType === '연차'){
+            // 휴가 신청 시, 휴가 사용 일 수 정
+            Member.findById(res.locals.member._id).then(item => {
+                const index = item.vacationCounts.map(item => item.year).indexOf(2021);
+                item.vacationCounts[index].usedDate += usedDate ;
+                item.save();
+            })
+        }
 
         try{
             await vacation.save();
