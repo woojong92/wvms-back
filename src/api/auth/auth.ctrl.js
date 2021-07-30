@@ -45,7 +45,7 @@ module.exports = {
             const profile = member.toJSON();
             delete profile.hashedPassword;
 
-            const token = member.generateToken();
+            const token = await member.generateToken();
 
             res
                 .status(200)
