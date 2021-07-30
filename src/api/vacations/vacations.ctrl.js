@@ -90,7 +90,7 @@ module.exports = {
         // Vacation.findById(id)
         const vacation = await Vacation.findById(id).exec();
 
-        if(vacationType === '연차'){
+        if(vacation.vacationType === '연차'){
             // // 휴가 신청 시, 휴가 사용 일 수 정
             Member.findById(res.locals.member._id).then(item => {
                 const index = item.vacationCounts.map(item => item.year).indexOf(2021);
