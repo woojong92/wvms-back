@@ -10,12 +10,13 @@ const api = require('./api');
 const jwtMiddleware = require('./libs/jwtMiddleware');
 
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 const MONGO_URI = 'mongodb://localhost:27017/test_db';
 
 const mongoose = require('mongoose');
 const mongo_uri = "mongodb+srv://woody:IvOJdBtIPNtAMiwA@cluster0.vqqlf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-mongoose.connect(mongo_uri, { 
+
+mongoose.connect(MONGO_URI, { 
   useNewUrlParser: true, 
   useFindAndModify: false 
 }).then(() => {
